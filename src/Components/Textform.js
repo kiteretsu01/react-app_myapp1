@@ -3,15 +3,6 @@ import React, { useState } from "react";
 export default function Textform(props) {
   const [text, setText] = useState("");
 
-  const words = () => {
-    let len = text.split(" ").length;
-    console.log(len);
-    if (len == 0) {
-      return 0;
-    } else {
-      return text.split(" ").length;
-    }
-  };
   const upclick = () => {
     let newtext = text.toUpperCase();
     setText(newtext);
@@ -46,7 +37,7 @@ export default function Textform(props) {
       </button>
       <h2 className="my-3">Text summary :-</h2>
       <h3>
-        {words} words and {text.length} letters
+        {text.split(" ").length} words and {text.length} letters
       </h3>
     </div>
   );
