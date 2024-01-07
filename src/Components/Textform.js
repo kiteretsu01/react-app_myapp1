@@ -11,6 +11,16 @@ export default function Textform(props) {
     let newtext = text.toLowerCase();
     setText(newtext);
   };
+  const clrclick = () => {
+    setText("");
+  };
+  const finrep = () => {
+    // let fin = prompt("Enter the text to FIND ");
+    // let rep = prompt("Enter the text to REPLACE");
+    // let text1=text;
+    // let newstr=text1.replaceaAll
+    alert("FIND and REPLACE feature is currently under Maintenance");
+  };
 
   const onchange = (event) => {
     setText(event.target.value);
@@ -35,6 +45,13 @@ export default function Textform(props) {
       <button id="button" className="btn btn-success mx-3" onClick={loclick}>
         lowercase
       </button>
+      <button id="button" className="btn btn-success mx-3" onClick={clrclick}>
+        ClearAll
+      </button>
+      <button id="button" className="btn btn-success mx-3" onClick={finrep}>
+        Find & replace
+      </button>
+
       <h2 className="my-3">Text summary :-</h2>
       <h3>
         {text.split(" ").length} words and {text.length} letters

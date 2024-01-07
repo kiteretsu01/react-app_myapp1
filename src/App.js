@@ -3,10 +3,9 @@ import Navbar from "./Components/Navbar";
 import Textform from "./Components/Textform";
 
 function App() {
-  const a = "enter your text here";
   return (
     <>
-      <Navbar about="about TextUtils" />
+      <Navbar about="About" />
       <div className="container my-3">
         <Textform heading="Enter the text to analyze" />
       </div>
