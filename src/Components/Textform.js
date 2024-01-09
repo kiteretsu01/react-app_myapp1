@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 export default function Textform(props) {
+  const [ct, setct] = useState("Copy Text");
   const [text, setText] = useState("");
 
   const upclick = () => {
@@ -22,9 +23,31 @@ export default function Textform(props) {
     alert("FIND and REPLACE feature is currently under Maintenance");
   };
 
+  const copied = () => {
+    setct("Copied ! ");
+    setTimeout(() => {
+      setct("Copy Text   ");
+    }, 1200);
+  };
+  const notcopied = () => {
+    setct("No Text !");
+    setTimeout(() => {
+      setct("Copy Text   ");
+    }, 1200);
+  };
+  const copy = () => {
+    if (text != "") {
+      navigator.clipboard.writeText(text);
+      copied();
+    } else {
+      notcopied();
+    }
+  };
+
   const onchange = (event) => {
     setText(event.target.value);
-    console.log("onchange");
+    // console.log("onchange");
+    // console.log(event.target.value);
   };
   return (
     <div>
@@ -50,6 +73,9 @@ export default function Textform(props) {
       </button>
       <button id="button" className="btn btn-success mx-3" onClick={finrep}>
         Find & replace
+      </button>
+      <button id="button" className="btn btn-success mx-3" onClick={copy}>
+        {ct}
       </button>
 
       <h2 className="my-3">Text summary :-</h2>

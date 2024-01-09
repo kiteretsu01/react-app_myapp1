@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
-import About from "./About";
-import React from "react";
+
+// import React, { useState } from "react";
 export default function Navbar(props) {
+  // const [mode, setMode] = useState("Enable Dark Mode");
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -33,6 +34,21 @@ export default function Navbar(props) {
                 </a>
               </li>
             </ul>
+            {/* <div className="form-check form-switch">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="flexSwitchCheckDefault "
+              />
+              <label
+                className="form-check-label"
+                htmlFor="flexSwitchCheckDefault"
+              >
+                {mode}
+              </label>
+            </div> */}
+
             <form className="d-flex" role="search">
               <input
                 id="search"
