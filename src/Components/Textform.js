@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 export default function Textform(props) {
-  const [style, setstyle] = useState({
-    color: "white",
-    backgroundColor: "black",
-  });
+  // const [style, setstyle] = useState({
+  //   color: "white",
+  //   backgroundColor: "black",
+  // });
 
-  // if (props.colorscheme == "dark") {
+  // if (props.colorscheme === "dark") {
   //   setstyle({
   //     color: "white",
   //     backgroundColor: "black",
@@ -67,7 +67,7 @@ export default function Textform(props) {
     }, 1200);
   };
   const copy = () => {
-    if (text != "") {
+    if ((text = "")) {
       navigator.clipboard.writeText(text);
       copied();
     } else {
@@ -83,12 +83,12 @@ export default function Textform(props) {
   return (
     <div
       style={{
-        color: props.colorscheme == "light" ? "black" : "white",
+        color: props.colorscheme === "light" ? "black" : "white",
       }}
     >
       <h1
         style={{
-          color: props.colorscheme == "light" ? "black" : "white",
+          color: props.colorscheme === "light" ? "black" : "white",
         }}
       >
         {props.heading}
@@ -103,8 +103,8 @@ export default function Textform(props) {
           placeholder="Enter text here"
           style={{
             backgroundColor:
-              props.colorscheme == "dark" ? "rgb(6 2 41)" : "white",
-            color: props.colorscheme == "light" ? "black" : "white",
+              props.colorscheme === "dark" ? "rgb(6 2 41)" : "white",
+            color: props.colorscheme === "light" ? "black" : "white",
           }}
         ></textarea>
       </div>
