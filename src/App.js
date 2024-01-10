@@ -25,7 +25,11 @@ function App() {
         togglemode={togglemode}
       />
       <div className="container my-3">
-        <Textform heading="Enter the text to analyze" colorscheme={appmode} />
+        <Textform
+          heading="Enter the text to analyze"
+          colorscheme={appmode}
+          togglemode={togglemode}
+        />
         {/* <About /> */}
       </div>
     </>
