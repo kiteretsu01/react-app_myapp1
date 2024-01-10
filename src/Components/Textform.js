@@ -123,7 +123,6 @@ export default function Textform(props) {
       <button id="button" className="btn btn-success mx-3" onClick={copy}>
         {ct}
       </button>
-      <button onClick={props.togglemode}>darkmode</button>
 
       <h2 className="my-3">Text summary :-</h2>
       <h3>
