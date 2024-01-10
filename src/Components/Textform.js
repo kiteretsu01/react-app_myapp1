@@ -67,7 +67,7 @@ export default function Textform(props) {
     }, 1200);
   };
   const copy = () => {
-    if ((text = "")) {
+    if (text === "") {
       navigator.clipboard.writeText(text);
       copied();
     } else {
