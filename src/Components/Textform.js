@@ -1,6 +1,37 @@
 import React, { useState } from "react";
 
 export default function Textform(props) {
+  const [style, setstyle] = useState({
+    color: "white",
+    backgroundColor: "black",
+  });
+
+  // if (props.colorscheme == "dark") {
+  //   setstyle({
+  //     color: "white",
+  //     backgroundColor: "black",
+  //   });
+  // } else {
+  //   setstyle({
+  //     color: "black",
+  //     backgroundColor: "white",
+  //   });
+  // }
+
+  const countl = () => {
+    let str = text;
+    let letter = str.replace(/\s+/g, "").length;
+
+    return letter;
+  };
+
+  const countw = () => {
+    let str = text;
+
+    let words = str.trim().split(/\s+/).length;
+    return words;
+  };
+
   const [ct, setct] = useState("Copy Text");
   const [text, setText] = useState("");
 
@@ -50,16 +81,31 @@ export default function Textform(props) {
     // console.log(event.target.value);
   };
   return (
-    <div>
-      <h1>{props.heading}</h1>
+    <div
+      style={{
+        color: props.colorscheme == "light" ? "black" : "white",
+      }}
+    >
+      <h1
+        style={{
+          color: props.colorscheme == "light" ? "black" : "white",
+        }}
+      >
+        {props.heading}
+      </h1>
       <div className="mb-3">
         <textarea
           value={text}
           onChange={onchange}
-          className="form-control"
+          className="form-control "
           id="text"
           rows="8"
           placeholder="Enter text here"
+          style={{
+            backgroundColor:
+              props.colorscheme == "dark" ? "rgb(6 2 41)" : "white",
+            color: props.colorscheme == "light" ? "black" : "white",
+          }}
         ></textarea>
       </div>
       <button id="button" className="btn btn-success" onClick={upclick}>
@@ -80,7 +126,7 @@ export default function Textform(props) {
 
       <h2 className="my-3">Text summary :-</h2>
       <h3>
-        {text.split(" ").length} words and {text.length} letters
+        {countl()} letters and {countw()} words
       </h3>
     </div>
   );

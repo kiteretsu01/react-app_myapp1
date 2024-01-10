@@ -1,15 +1,20 @@
 import PropTypes from "prop-types";
 
-// import React, { useState } from "react";
+import React, { useState } from "react";
 export default function Navbar(props) {
-  // const [mode, setMode] = useState("Enable Dark Mode");
+  // let hello = `${props.search}`;
+  // console.log(hello);
+  // above is an attempt to hide the search box using props
+  const [mode, setMode] = useState("Enable dark mode");
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav
+        className="navbar navbar-expand-lg bg-body-tertiary"
+        data-bs-theme={props.colorscheme}
+      >
         <div className="container-fluid">
-          <a className="navbar-brand" href="./About">
-            {props.title}
-          </a>
+          <a className="navbar-brand fw-bold">{props.title}</a>
           <button
             className="navbar-toggler"
             type="button"
@@ -34,33 +39,39 @@ export default function Navbar(props) {
                 </a>
               </li>
             </ul>
-            {/* <div className="form-check form-switch">
+            <div
+              className={`form-check form-switch text-${
+                props.colorscheme == "light" ? "dark" : "light"
+              }`}
+            >
               <input
                 className="form-check-input"
                 type="checkbox"
                 role="switch"
                 id="flexSwitchCheckDefault "
+                onClick={props.togglemode}
               />
               <label
-                className="form-check-label"
+                className="form-check-label fs-6 fw-bold"
                 htmlFor="flexSwitchCheckDefault"
               >
                 {mode}
               </label>
-            </div> */}
+            </div>
 
-            <form className="d-flex" role="search">
+            {/* <form className="d-flex" role="search">
               <input
                 id="search"
                 className="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                hello
               />
               <button className="btn btn-outline-success" type="submit">
                 Search
-              </button>
-            </form>
+              </button> 
+            </form>*/}
           </div>
         </div>
       </nav>
